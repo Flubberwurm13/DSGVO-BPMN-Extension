@@ -1,0 +1,121 @@
+{
+  "name": "dsgvoErweiterung",
+  "uri": "http://some-company/schema/bpmn/dsgvo",
+  "prefix": "dsgvo",
+  "xml": {
+    "tagAlias": "lowerCase"
+  },
+  "types": [
+    {
+      "name": "UnrechtmaessigeVerarbeitung",
+      "superClass": [
+          "Task"
+      ],
+      "properties": [
+        {
+          "name": "renderings",
+          "type": "Rendering",
+          "isMany": true
+        },
+        {
+          "name": "implementation",
+          "isAttr": true,
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "name": "keinZweck",
+      "superClass": ["UnrechtmaessigeVerarbeitung"]
+    },
+    {
+      "name": "Unrichtigkeit",
+      "superClass": [
+        "UnrechtmaessigeVerarbeitung"
+      ]
+    },
+    {
+      "name": "Integrität/Vertraulichkeit",
+      "superClass": [
+        "UnrechtmaessigeVerarbeitung"
+      ]
+    },
+    {
+      "name": "besondereKategoriepersonenbezogenerDaten",
+      "superClass": [
+        "UnrechtmaessigeVerarbeitung"
+      ]
+    },
+    {
+      "name": "AutomatisierteEntscheidungen",
+      "superClass": [
+        "UnrechtmaessigeVerarbeitung"
+      ]
+    },
+    {
+      "name": "Haftung",
+      "superClass": [
+        "UnrechtmaessigeVerarbeitung"
+      ]
+    },
+    {
+      "name": "Informationspflichtverletzung",
+      "superClass": [
+        "bpmn:MessageFlow"
+      ]
+    },
+    {
+      "name": "betroffenePerson",
+      "superClass": [
+        "Informationspflichtverletzung",
+        "Auskunftspflichtverletzung"
+      ]
+    },
+    {
+      "name": "Aufsichtsbehörde",
+      "superClass": [
+        "Informationspflichtverletzung",
+        "Auskunftspflichtverletzung"
+      ]
+    },
+    {
+      "name": "Verantwortlicher",
+      "superClass": [
+        "Informationspflichtverletzung",
+        "Auskunftspflichtverletzung"
+      ]
+    },
+    {
+      "name": "Auskunftspflichtverletzung",
+      "superClass": [
+        "bpmn:MessageFlow"
+      ]
+    },
+    {
+      "name": "DatenuebermittlungAnDrittländer",
+      "superClass": [
+        "bpmn:MessageFlow"
+      ]
+    },
+    {
+      "name": "keinSchutzniveau/Abkommen",
+      "superClass": [
+        "DatenübermittlungAnDrittländer"
+      ]
+    },
+    {
+      "name": "ungeigneteGarantien",
+      "superClass": [
+        "DatenübermittlungAnDrittländer"
+      ]
+    },
+    {
+      "name": "keineInternenDatenschutzvorschriften",
+      "superClass": [
+        "DatenübermittlungAnDrittländer"
+      ]
+    }
+  ],
+  "emumerations": [],
+  "associations": []
+}
